@@ -81,6 +81,15 @@ students = [
     }
 ]
 
+@app.route('/')
+def home():
+    return jsonify({
+        "message": "Welcome to the year 8 students scores API",
+        "endpoints": {
+            "GET  /api/students": "List all the students"
+        }
+    })
+
 @app.route("/api/students", methods=["GET"])
 def get_students():
     return jsonify({
